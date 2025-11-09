@@ -1,20 +1,21 @@
-﻿using Tyuiu.Kucherenkonm.Sprint4.Task1.V29.Lib;
+﻿using Tyuiu.Kucherenkonm.Sprint4.Task2.V27.Lib;
 internal class Program
 {
     static void Main(string[] args)
     {
+        Random rnd = new Random();
         DataService ds = new DataService();
 
         Console.Title = "Спринт #4 | Выполнила: Кучеренко Н. М. | ИИПб - 25 - 1";
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* Спринт #4                                                               *");
-        Console.WriteLine("* Тема: Одномерные массивы (ввод с клавиатуры)                            *");
-        Console.WriteLine("* Задание #1                                                              *");
-        Console.WriteLine("* Вариант #29                                                             *");
+        Console.WriteLine("* Тема: Одномерные массивы (генератор случайных чисел)                    *");
+        Console.WriteLine("* Задание #2                                                              *");
+        Console.WriteLine("* Вариант #27                                                             *");
         Console.WriteLine("* Выполнила: Кучеренко Надежда Михайловна | ИИПб - 25 - 1                 *");
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* УСЛОВИЕ:                                                                *");
-        Console.WriteLine("*                Подсчитать сумму нечетных элементов массива              *");
+        Console.WriteLine("*                Подсчитать сумму четных элементов массива                *");
         Console.WriteLine("*                                                                         *");
         Console.WriteLine("*                                                                         *");
         Console.WriteLine("***************************************************************************");
@@ -24,10 +25,9 @@ internal class Program
         Console.WriteLine("Введите количество элементов массива: ");
         len = Convert.ToInt32(Console.ReadLine());
         int[] numsArray = new int[len];
-        for (int i = 0; i <= len-1; i++)
+        for (int i = 0; i <= len - 1; i++)
         {
-            Console.Write("Введите значение " + i + " элемента массива: ");
-            numsArray[i] = Convert.ToInt32(Console.ReadLine());
+            numsArray[i] = rnd.Next(2,7);
         }
         Console.WriteLine("Массив: ");
         for (int i = 0; i <= len - 1; i++)
@@ -35,8 +35,6 @@ internal class Program
             Console.WriteLine(numsArray[i] + "\t");
         }
         Console.WriteLine();
-        Console.WriteLine();
-
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
         Console.WriteLine("***************************************************************************");
